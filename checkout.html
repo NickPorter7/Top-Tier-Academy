@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Join Today!</title>
+    </head>
+    <body>
+    <style>
+        body {
+            background-color: #1E1B1B;
+            color:white;
+            overflow-x: hidden;
+        }
+        #paypal-button-container-P-3WN307180U5233101MRUCXVY {
+            width: 30%;
+            height: 50%;
+            position:relative;
+            top: 40px;
+        }
+        h1 {
+            position:relative;
+            top: 10px;
+        }
+    </style>
+   <center><h1><b>Start your journey for only</b> <b style="color:orange;">$29.99/month</b> <b>today!</b></h1>
+        <div id="paypal-button-container-P-3WN307180U5233101MRUCXVY"></div></center>
+<script src="https://www.paypal.com/sdk/js?client-id=AYYQE9-uSECSriCYkEV4WUkcvi0hk-sc4lxbni0vx-EKKY63WzJpUX8la61K3UlBxlRBPmmnCM0YbEeB&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'pill',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-3WN307180U5233101MRUCXVY'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+        window.location.href = "https://j1ujoqtja6r.typeform.com/to/XE8PEyc0?typeform-source=admin.typeform.com";
+      }
+  }).render('#paypal-button-container-P-3WN307180U5233101MRUCXVY'); // Renders the PayPal button
+</script>
+    </body>
+</html>
